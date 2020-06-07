@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Burgers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./burger-style.css" />
+  </head>
+  <body>
+    <header class="jumbotron">
+      <img
+        src="../public/assets/img/burger.jpg"
+        alt="Image"
+        height="200"
+        width="200"
+      />
+      <h3 class="display-3">Eat-Da-Burger !!</h3>
+      <p class="lead">An app to fulfill your burger wish</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <main class="container">
+      <section>
+        <!--  Row to display list of burgers wished-->
+        <div class="row">
+          <!--  Psudo column for alignment of UI-->
+          <div class="col-md-2">
+            <label></label>
+          </div>
+          <!--  Disabled textarea to display wished burger -->
+          <div class="col-sm-3">
+            <textarea
+              class="form-control ta-border"
+              disabled
+              rows="2"
+            ></textarea>
+          </div>
+          <div class="col-sm-2 center">
+            <button class="btn btn-primary btn-devour">
+              Devour It!
+            </button>
+          </div>
+          <!--  Disabled textarea to display devoured burger -->
+          <div class="col-sm-3">
+            <textarea
+              class="form-control ta-border"
+              disabled
+              rows="2"
+            ></textarea>
+          </div>
+          <!--  Psudo column for alignment of UI-->
+          <div class="col-md-2">
+            <label></label>
+          </div>
+        </div>
+        <!--  Create some gap-->
+        <div class="row">
+          <div class="col-md-12">
+            <label></label>
+          </div>
+        </div>
+        <!--  Create some gap-->
+        <div class="row">
+          <div class="col-md-12">
+            <label></label>
+          </div>
+        </div>
+        <!--Form to submit the burger name entered on text area on the click of the submit button-->
+        <form class="create-form">
+          <div class="form-group">
+            <!--  Row for the Text Area -->
+            <div class="row">
+              <div class="col-md-4">
+                <label class="float-right"></label>
+              </div>
+              <div class="col-md-4">
+                <textarea
+                  class="form-control ta-border"
+                  id="wish-burg"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <!--  Row for the submit button -->
+            <div class="row">
+              <div class="col-md-5"></div>
+              <div class="col-md-2 center">
+                <button type="submit" class="btn btn-primary btn-submit">
+                  submit
+                </button>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
+          </div>
+        </form>
+        <!--  Row for the Instruction to use app -->
+        <div class="row">
+          <div class="col-sm-4">
+            <label></label>
+          </div>
+          <div class="col-sm-6">
+            <p>Enter a burger you want to eat. Click the "Submit" button</p>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

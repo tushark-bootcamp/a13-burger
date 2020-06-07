@@ -16,6 +16,7 @@ router.get("/", function(req, res) {
   });
 });
 
+// Create a new burger to be added in wish list
 router.post("/api/burger", function(req, res) {
     burger.create([
     "name"
@@ -27,13 +28,15 @@ router.post("/api/burger", function(req, res) {
   });
 });
 
+// change the status from wished to evoured
 router.put("/api/burgers/:id", function(req, res) {
   var burgerId = "id = " + req.params.id;
 
-  console.log("burgerId", burgerId);
+  console.log("burgerId will be devoured", burgerId);
 
   burger.update({
-    status: req.body.status
+    //status: req.body.status -- the value of status does not come from request
+    status: "devoured"
   }, burgerId, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
