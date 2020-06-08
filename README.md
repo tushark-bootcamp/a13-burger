@@ -1,5 +1,5 @@
-# a10-employee-prof-templ-engine
-  [![Generic badge](https://img.shields.io/badge/TeamProfile-Generator-green.svg)](https://https://github.com/tushark-bootcamp/a13-burger)
+# a13-Burger App
+  [![Generic badge](https://img.shields.io/badge/BurgerApp-Generator-green.svg)](https://https://github.com/tushark-bootcamp/a13-burger)
   
   ## Description
   Application to wish and devour burgers. More than the application functionality itself, the focus of this exercise is to demonstrate implementation of an MVC framework with a MySQL database
