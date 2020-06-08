@@ -2,7 +2,6 @@
     <img src="/assets/img/burger.jpg" alt="Image" height="200" width="200" />
     <h3 class="display-3">Eat-Da-Burger !!</h3>
     <p class="lead">An app to fulfill your burger wish</p>
-    <p id="currentDay" class="lead"></p>
 </header>
 <main class="container">
     <section>
@@ -24,7 +23,6 @@
                 </button>
             </div>
             {{else}}
-            {{> burgers/burger-block status=devoured}}
             <!--  Disabled textarea to display devoured burger -->
             <div class="col-sm-3">
                 <textarea class="form-control ta-border" disabled rows="2">{{name}}</textarea>
@@ -35,7 +33,7 @@
             </div>
         </div>
         {{/if}}
-        {{#each burgers}}
+         {{/each}}
         <!--  Create some gap-->
         <div class="row">
             <div class="col-md-12">

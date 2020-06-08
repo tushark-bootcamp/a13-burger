@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 });
 
 // Create a new burger to be added in wish list
-router.post("/api/burger", function(req, res) {
+router.post("/api/burgers", function(req, res) {
     burger.create([
     "name"
   ], [
