@@ -50,6 +50,15 @@ var orm = {
       callback(result);
     });
   },
+  allSort: function(tableInput, sortInput, callback) {
+    var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + sortInput + ";";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      callback(result);
+    });
+  },
   create: function(table, cols, vals, callback) {
     var queryString = "INSERT INTO " + table;
 

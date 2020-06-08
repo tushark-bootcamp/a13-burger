@@ -7,6 +7,12 @@ var burger = {
       callback(res);
     });
   },
+  // findAll by sorting on devoured
+  allSortByDevoured: function(callback) {
+    orm.allSort("burgers", "devoured", function(res) {
+      callback(res);
+    });
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, callback) {
     orm.create("burgers", cols, vals, function(res) {
