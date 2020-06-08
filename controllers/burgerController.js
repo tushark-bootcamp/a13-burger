@@ -6,10 +6,23 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-    burger.allSortByDevoured(function(data) {
+router.get("/", function (req, res) {
+  burger.allSortByDevoured(function (data) {
+    console.log(data);
+
+    // Array of wished burgers
+    //let wBurgers = data.filter(burger => burger.devoured = false);
+    let wBurgers = data.filter(function (b) {
+      console.log("b.devoured: " + b.devoured);
+      return b.devoured = 0;
+    });
+    console.log("wBurgers: " + wBurgers);
+    // Array of devoured burgers
+    let dBurgers = data.filter(burger => burger.devoured = 1);
+    console.log("dBurgers: " + dBurgers);
     var hbsObject = {
-        burgers: data
+      wishedBurgers: wBurgers,
+      devouredBurgers: dBurgers
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -17,19 +30,19 @@ router.get("/", function(req, res) {
 });
 
 // Create a new burger to be added in wish list
-router.post("/api/burgers", function(req, res) {
-    burger.create([
+router.post("/api/burgers", function (req, res) {
+  burger.create([
     "name"
   ], [
     req.body.name
-  ], function(result) {
+  ], function (result) {
     // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
 });
 
 // change the status from wished to evoured
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function (req, res) {
   var burgerId = "id = " + req.params.id;
 
   console.log("burgerId will be devoured", burgerId);
@@ -37,7 +50,7 @@ router.put("/api/burgers/:id", function(req, res) {
   burger.update({
     //status: req.body.status -- the value of status does not come from request
     devoured: true
-  }, burgerId, function(result) {
+  }, burgerId, function (result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -48,10 +61,10 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 
 // Future requirement
-router.delete("/api/burgers/:id", function(req, res) {
+router.delete("/api/burgers/:id", function (req, res) {
   var burgerId = "id = " + req.params.id;
 
-  burger.delete(burgerId, function(result) {
+  burger.delete(burgerId, function (result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
