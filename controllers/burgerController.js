@@ -12,14 +12,11 @@ router.get("/", function (req, res) {
 
     // Array of wished burgers
     //let wBurgers = data.filter(burger => burger.devoured = false);
-    let wBurgers = data.filter(function (b) {
-      console.log("b.devoured: " + b.devoured);
-      return b.devoured = 0;
-    });
-    console.log("wBurgers: " + wBurgers);
+    let wBurgers = data.filter(burger => burger.devoured === 0);
+    //console.log("wBurgers: " + wBurgers);
     // Array of devoured burgers
-    let dBurgers = data.filter(burger => burger.devoured = 1);
-    console.log("dBurgers: " + dBurgers);
+    let dBurgers = data.filter(burger => burger.devoured === 1);
+    //console.log("dBurgers: " + dBurgers);
     var hbsObject = {
       wishedBurgers: wBurgers,
       devouredBurgers: dBurgers
