@@ -51,7 +51,7 @@ var orm = {
     });
   },
   allSort: function(tableInput, sortInput, callback) {
-    var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + sortInput + ";";
+    var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + sortInput + ", id desc;";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

@@ -6,7 +6,7 @@ let cities = [
     { name: 'Philadelphia', population: 1526006 }
 ];
 
-let bigCities = cities.filter(city => city.population > 3000000);
+let bigCities = cities.filter(city => (city.population > 3000000));
 
 console.log(bigCities);
 console.log(cities);
