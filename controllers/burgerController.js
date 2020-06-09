@@ -11,7 +11,6 @@ router.get("/", function (req, res) {
     console.log(data);
 
     // Array of wished burgers
-    //let wBurgers = data.filter(burger => burger.devoured = false);
     let wBurgers = data.filter(burger => burger.devoured === 0);
     //console.log("wBurgers: " + wBurgers);
     // Array of devoured burgers
